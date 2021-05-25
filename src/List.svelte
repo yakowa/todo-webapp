@@ -19,6 +19,7 @@
 	}
 	ul {
 		padding: 5px;
+		maring: 0;
 		background-color: #efefef;
 		color: #333;
 		list-style-type: none;
