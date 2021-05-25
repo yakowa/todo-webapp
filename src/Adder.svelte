@@ -1,10 +1,12 @@
 <script>
 	export let list;
+	export let storeList;
 
 	let tempValue = '';
 	
 	function updateList() {
 		list = [...list, tempValue]
+		storeList();
 		tempValue = '';
 	}
 </script>

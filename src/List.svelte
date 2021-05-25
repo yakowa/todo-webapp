@@ -1,12 +1,13 @@
 <script>
 	export let todos;
+	export let storeList;
 </script>
 
 <ul>
 	{#each todos as todo, i}
 	<li>
 		{todo}
-		<span on:click={(e) => {todos.splice(i, 1); todos = todos;}}>&times</span>
+		<span on:click={(e) => {todos.splice(i, 1); todos = todos; storeList();}}>&times</span>
 	</li>
 	{/each}
 	<span>Yayy! There is nothing to do! *dance*</span>
