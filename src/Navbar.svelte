@@ -18,6 +18,7 @@ div {
 }
 h2 {
 	margin: 0;
+	font-family: 'Patrick Hand', cursive;
 }
 i {
 	font-size: 2rem;
