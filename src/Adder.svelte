@@ -17,7 +17,7 @@
 </script>
 
 <div>
-	<input type="text" bind:value={tempValue}/>
+	<input type="text" bind:value={tempValue} placeholder="New item"/>
 	<button on:click={updateList}>Add</button>
 </div>
 
@@ -25,6 +25,7 @@
 <style>
 	div {
 		display: flex;
+		background-color: #efefef;
 		flex-direction: row;
 		padding: 10px;
 	}

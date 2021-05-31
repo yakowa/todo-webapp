@@ -2,6 +2,7 @@
 	import List from './List.svelte';
 	import Adder from './Adder.svelte';
 	import Navbar from './Navbar.svelte';
+	import Footer from './Footer.svelte';
 	
 	var list = localStorage.getItem('list');
 	if (list == null) {
@@ -12,28 +13,18 @@
 	function storeList() {
 		localStorage.setItem('list', JSON.stringify(todosList));
 	}
-
-
-
-	let page = 'list';
 </script>
 
 
-<Navbar bind:page={page}/>
-{#if page == 'list'}
+<Navbar/>
+<div>
 	<Adder bind:list={todosList} storeList={storeList}/>
 	<List bind:todos={todosList} storeList={storeList}/>
-{:else}
-	<div>
-		<p>Todo App v1.5 created by JacobEM</p>
-		<p>Licensed under CC BY-NC-ND 4.0</p>
-	</div>
-{/if}
+</div>
+<Footer/>
 
-<style>
+<!-- <style>
 	div {
-		padding: 2rem;
-		background-color: #ccc;
-		color: #333;
+		padding: 1rem 5rem;
 	}
-</style>
+</style> -->

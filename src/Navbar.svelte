@@ -1,10 +1,5 @@
-<script>
-	export let page;
-</script>
-
 <div>
-<h2>Todo App!</h2>
-<p on:click={() => {if (page == 'list') { page = 'adder'; } else { page = 'list'; } }}>{page == 'list' ? 'Info' : 'Back'}</p>
+	<h2>Todo App!</h2>
 </div>
 
 <style>
