@@ -4,7 +4,7 @@
 
 <div>
 <h2>Todo App!</h2>
-<i class="fa fa-bars" on:click={() => {if (page == 'list') { page = 'adder'; } else { page = 'list'; } }}></i>
+<p on:click={() => {if (page == 'list') { page = 'adder'; } else { page = 'list'; } }}>{page == 'list' ? 'Info' : 'Back'}</p>
 </div>
 
 <style>
@@ -19,11 +19,5 @@ div {
 h2 {
 	margin: 0;
 	font-family: 'Patrick Hand', cursive;
-}
-i {
-	font-size: 2rem;
-}
-i:hover {
-	opacity: 0.8;
 }
 </style>

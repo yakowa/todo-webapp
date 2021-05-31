@@ -24,5 +24,16 @@
 	<Adder bind:list={todosList} storeList={storeList}/>
 	<List bind:todos={todosList} storeList={storeList}/>
 {:else}
-	..
+	<div>
+		<p>Todo App v1.5 created by JacobEM</p>
+		<p>Licensed under CC BY-NC-ND 4.0</p>
+	</div>
 {/if}
+
+<style>
+	div {
+		padding: 2rem;
+		background-color: #ccc;
+		color: #333;
+	}
+</style>
