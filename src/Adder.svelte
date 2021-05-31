@@ -11,7 +11,7 @@
 			tempValue = '';
 		}
 		else {
-			ons.notification.alert('Whoops! You must type something to add it!')
+			notificationAlert('Whoops!', 'You must type something to add it!')
 		}
 	}
 </script>

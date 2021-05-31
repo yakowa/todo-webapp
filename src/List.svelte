@@ -10,7 +10,7 @@
 		<span on:click={(e) => {todos.splice(i, 1); todos = todos; storeList();}}>&times</span>
 	</li>
 	{/each}
-	<span>Yayy! There is nothing to do! *dance*</span>
+	<span>Yayy! There is nothing to do! ¯\_(ツ)_/¯</span>
 </ul>
 
 <style>

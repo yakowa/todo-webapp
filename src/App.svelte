@@ -3,7 +3,8 @@
 	import Adder from './Adder.svelte';
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer.svelte';
-	
+
+	// Loading stored list
 	var list = localStorage.getItem('list');
 	if (list == null) {
 		localStorage.setItem('list', '[]');
@@ -13,6 +14,8 @@
 	function storeList() {
 		localStorage.setItem('list', JSON.stringify(todosList));
 	}
+
+	const __version = 'v1.8';
 </script>
 
 
@@ -21,7 +24,7 @@
 	<Adder bind:list={todosList} storeList={storeList}/>
 	<List bind:todos={todosList} storeList={storeList}/>
 </div>
-<Footer/>
+<Footer version={__version}/>
 
 <!-- <style>
 	div {
