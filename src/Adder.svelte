@@ -25,7 +25,7 @@
 <style>
 	div {
 		display: flex;
-		background-color: #efefef;
+		background-color: var(--bg-alt);
 		flex-direction: row;
 		padding: 10px;
 	}

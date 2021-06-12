@@ -18,7 +18,7 @@
 		padding-top: 1.5rem;
 	}
 	a {
-		color: #1b9595;
+		color: var(--theme);
 	}
 	a:hover, a:focus {
 		opacity: 0.8;

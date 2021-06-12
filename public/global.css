@@ -37,28 +37,23 @@ input, button, select, textarea {
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
-	border: 1px solid #ccc;
+	border: 1px solid var(--border);
 	border-radius: 2px;
+	background-color: var(--bg);
+	color: var(--text);
+	transition: color, background-color, border-color 500ms;
 }
 
 input:disabled {
-	color: #ccc;
+	color: var(--border);
 }
 
 button {
-	color: #333;
-	background-color: #f4f4f4;
+	color: var(--text);
+	background-color: var(--bg);
 	outline: none;
 }
 
-button:disabled {
-	color: #999;
-}
+button:disabled { opacity: 0.8; }
 
-button:not(:disabled):active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
-}
+button:focus, button:hover { opacity: 0.8; border-color: var(--bg-secondary); }

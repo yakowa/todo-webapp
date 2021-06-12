@@ -14,6 +14,30 @@
     <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="manifest" href="site.webmanifest"/>
 
+	<style>
+		.light {
+			--bg: #ffffff;
+			--bg-alt: #efefef;
+			--bg-secondary: #797979;
+			--border: #ccc;
+			--text: #333;
+			--theme: #1b9595;
+		}
+		.dark {
+			--bg: #1f2937;
+			--bg-alt: #304056;
+			--bg-secondary: #111827;
+			--border: #111827;
+			--text: #f4f4f4;
+			--theme: #1b9595;
+			/* --theme: #072a2a; */
+		}
+		body {
+			color: var(--text) !important;
+			background-color: var(--bg-alt);
+		}
+	</style>
+
 
 
 
@@ -27,7 +51,7 @@
 	<script defer src='build/bundle.js'></script>
 </head>
 
-<body>
+<body class="light">
 	<div id="root">
 	</div>
 </body>

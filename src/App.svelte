@@ -25,9 +25,3 @@
 	<List bind:todos={todosList} storeList={storeList}/>
 </div>
 <Footer version={__version}/>
-
-<!-- <style>
-	div {
-		padding: 1rem 5rem;
-	}
-</style> -->

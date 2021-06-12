@@ -17,27 +17,29 @@
 	ul {
 		padding: 5px;
 		margin: 0;
-		background-color: #efefef;
-		color: #333;
+		background-color: var(--bg-alt);
+		color: var(--text);
 		list-style-type: none;
 		display: flex;
 		flex-direction: column;
 	}
 	li {
-		background-color: #fff;
+		background-color: var(--bg);
 		padding: 8px;
 		display: flex;
 		flex-direction: row;
-		border-bottom: 2px solid #ccc;
+		border-bottom: 2px solid var(--border);
 	}
 	li > span {
 		margin-left: auto;
-		background-color: #ccc;
+		background-color: var(--border);
+		border-radius: 1rem;
 		color: red;
 		font-size: 20px;
 		font-weight: bolder;
 		padding: 0 4px 4px 4px;
 	}
+	li > span:hover { cursor: pointer; }
 	ul>li+span { display: none }
-	ul > span { display: block; padding: 15px; }
+	ul > span { display: block; padding: 15px; background-color: var(--bg); }
 </style>
