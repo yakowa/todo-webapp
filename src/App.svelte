@@ -15,7 +15,7 @@
 		localStorage.setItem('list', JSON.stringify(todosList));
 	}
 
-	const __version = 'v1.8';
+	const __version = 'v1.9.1';
 </script>
 
 
