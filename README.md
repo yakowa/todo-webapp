@@ -5,7 +5,7 @@
 
 Todo App is a simple, easy, efficient solution to an everyday problem, whilst saving you lots of paper!
 
-![Version: 1.9.1](https://img.shields.io/badge/Version-1.9.1-00e0a7)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-00e0a7)
 
 ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC--BY--SA-776bff)
 ## Documentation

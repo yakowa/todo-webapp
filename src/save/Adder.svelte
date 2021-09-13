@@ -1,21 +1,14 @@
 <script>
-	// The list object
 	export let list;
-	// The current selected list
-	export let currentList;
-	// Store in localstorage function
 	export let storeList;
 
-	let newTodoItem = '';
+	let tempValue = '';
 	
 	function updateList() {
-		if (!(newTodoItem == '')) {
-			if (list[currentList].length > 0) {
-				list[currentList] = [...list[currentList], newTodoItem]
-			}
-			else { list[currentList] = [newTodoItem] }
+		if (!(tempValue == '')) {
+			list = [...list, tempValue]
 			storeList();
-			newTodoItem = '';
+			tempValue = '';
 		}
 		else {
 			notificationAlert('Whoops!', 'You must type something to add it!')
@@ -24,7 +17,7 @@
 </script>
 
 <div>
-	<input type="text" bind:value={newTodoItem} placeholder="New item"/>
+	<input type="text" bind:value={tempValue} placeholder="New item"/>
 	<button on:click={updateList}>Add</button>
 </div>
 
