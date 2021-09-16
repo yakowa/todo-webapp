@@ -17,37 +17,34 @@
 		localStorage.setItem('list', JSON.stringify(todosList));
 	}
 
-	const __version = 'v1.9.1';
-	// let currentList = 'default';
-	var currentList = 'default';
-	var page = 'list';
+	const __version = 'v2.0.0';
+	let currentList = 'default';
+	let page = 'list';
 
-function test() {
-	page = (page == 'list') ? 'listOptions' : 'list';
-}
+	function togglePage() {
+		page = (page == 'list') ? 'listOptions' : 'list';
+	}
 </script>
 
 
-<Navbar/>
+<Navbar togglePage={togglePage} bind:page={page}/>
 <div>
-	<!-- {#if page == 'list'} -->
-		{#if currentList !== 'default'}
-			<h3>{currentList} list</h3>
-		{/if}
+	{#if page == 'list'}
+		<h2>{(currentList == 'default') ? 'Default list' : (currentList + ' list') }</h2>
 		<Adder bind:list={todosList} storeList={storeList} currentList={currentList}/>
 		<List bind:todos={todosList} storeList={storeList} currentList={currentList}/>
-	<!-- {:else} -->
-		<hr>
-		<Lists bind:todos={todosList} bind:currentList storeList={storeList}/>
-	<!-- {/if} -->
+	{:else}
+		<Lists bind:todos={todosList} togglePage={togglePage} bind:currentList={currentList} storeList={storeList}/>
+	{/if}
 </div>
 <Footer version={__version}/>
-
-<button on:click={ test }>Click Me</button>
 
 <style>
 	div {
 		max-width: 400px;
 		margin: auto;
+	}
+	@media screen and (max-width: 400px) {
+		div { margin: 0 4px; }
 	}
 </style>

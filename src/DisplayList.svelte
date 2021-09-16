@@ -10,7 +10,7 @@
 <ul>
 	{#each todos[currentList] as todo, i}
 	<li>
-		{todo}
+		<input type="text" bind:value={todo}>
 		<span on:click={(e) => {todos[currentList].splice(i, 1); todos = todos; storeList();}}>&times</span>
 	</li>
 	{/each}
@@ -46,4 +46,6 @@
 	li > span:hover { cursor: pointer; }
 	ul>li+span { display: none }
 	ul > span { display: block; padding: 15px; background-color: var(--bg); }
+
+	input { margin: 0; }
 </style>

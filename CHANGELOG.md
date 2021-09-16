@@ -1,5 +1,10 @@
 # Change Log
 
+## v2.0.0 (June 15, 2021)
+- Feature: Added multi list screen
+- Feature: Added editing list items
+- Feature: Added change page button
+
 ## vBETA 2.0.0 (June 15, 2021)
 - Features: Added multiple list support
 - Mod: Cleaned up var names and added comments in confusing areas

@@ -5,6 +5,8 @@
 	export let storeList;
 	// The current selected list
 	export let currentList;
+	// The toggle page function
+	export let togglePage;
 
 	let newListName = '';
 
@@ -14,22 +16,23 @@
 			todos = todos;
 			storeList();
 			newListName = '';
-			lists = getList();
+			lists = getList(todos);
 		}
 		else {
 			notificationAlert('Whoops!', 'There is already a list with that name!')
 		}
 	}
 
-	var lists = getList();
-	function getList() {
+	var lists = getList(todos);
+	function getList(passedList) {
 		let tempList = [];
-		for ( var property in todos ) { tempList = [...tempList, property] }
+		for ( var property in passedList ) { tempList = [...tempList, property] }
 		return tempList;
 	}
 
 </script>
 
+<h2>My Lists</h2>
 <div>
 	<input type="text" bind:value={newListName} placeholder="New list"/>
 	<button on:click={createNewList}>Add</button>
@@ -37,12 +40,18 @@
 
 <ul>
 	{#each lists as list, i}
-	<li on:click={(e) => { currentList = lists[i]; }}>
-		{lists[i]}
-		<span on:click={(e) => { delete todos[list]; todos = todos; storeList();}}>&times</span>
-	</li>
+		{#if i !== 0}
+			<li on:click={(e) => { currentList = lists[i]; togglePage(); }}>
+				{lists[i]}
+				<span on:click={(e) => { delete todos[list]; todos = todos; lists = getList(todos); storeList();}}>&times</span>
+			</li>
+		{:else}
+		<li on:click={(e) => { currentList = lists[i]; togglePage(); }}>
+			{lists[i]}
+		</li>
+		{/if}
 	{/each}
-	<span>Yayy! There is nothing to do! ¯\_(ツ)_/¯</span>
+	<span>You have no lists! ¯\_(ツ)_/¯</span>
 </ul>
 
 <style>
@@ -74,6 +83,11 @@
 		display: flex;
 		flex-direction: row;
 		border-bottom: 2px solid var(--border);
+	}
+	li:hover {
+		opacity: 0.8;
+		border: 1px solid var(--bg-secondary);
+		transition: all 300ms;
 	}
 	li > span {
 		margin-left: auto;
