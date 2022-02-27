@@ -8,25 +8,33 @@ Todo App is a simple, easy, efficient solution to an everyday problem, whilst sa
 ![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-00e0a7)
 
 ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC--BY--SA-776bff)
+
 ## Documentation
 
 ### Adding an item
 
 Locate the `new item` field, simply type what you want to add to the list and click `add`!
 
+### Editing an item
+
+Simply click the text of an item to modify its name!
+
 ### Removing an item
 
 Simply click X on the item you want to remove!
+
+### Adding new lists
+
+Navigate to the "My Lists" button in the top right. Then you may create new lists or delete already existing lists!
+
+### Switching list
+
+Navigate to the "My Lists" button in the top right. Then simply click on the list you would like to switch to.
 
 ### Changing themes
 
 Locate the `Go Dark` button to change to dark mode, once in dark mode, you will notice the button was replaced with `Go Light`, clicking this again will swap you to light mode.
 
-
-## Coming Soon
-
-- Colours Tags
-- Multiple Lists
 
 ## What did I learn
 
