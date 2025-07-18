@@ -1,13 +1,16 @@
-![JacobEM](https://jacobem.com/assets/media/JacobEM.png)
-
+<p align="center">
+		<img width="400px" src="https://yakowa.com/assets/media/yakowa.png" alt="">
+</p>
 
 # Todo App
 
 Todo App is a simple, easy, efficient solution to an everyday problem, whilst saving you lots of paper!
 
-![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-00e0a7)
-
+![Version: 2.0.1](https://img.shields.io/badge/Version-2.0.1-00e0a7)
 ![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC--BY--SA-776bff)
+
+![License: CC BY-SA 4.0](https://img.shields.io/badge/Created-2021-ffee00)
+![License: CC BY-SA 4.0](https://img.shields.io/badge/Last_Updated-2025-66ff00)
 
 ## Documentation
 
@@ -17,7 +20,11 @@ Locate the `new item` field, simply type what you want to add to the list and cl
 
 ### Editing an item
 
-Simply click the text of an item to modify its name!
+Simply click on the text of an item to modify its name!
+
+### Marking as done
+
+Simply click tick on the item you want to mark as done!
 
 ### Removing an item
 
@@ -30,6 +37,8 @@ Navigate to the "My Lists" button in the top right. Then you may create new list
 ### Switching list
 
 Navigate to the "My Lists" button in the top right. Then simply click on the list you would like to switch to.
+
+Or use the Quick Select at the top of the main screen (>v2.0.0)
 
 ### Changing themes
 
