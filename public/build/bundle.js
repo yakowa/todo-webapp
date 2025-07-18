@@ -620,15 +620,15 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[6] = list[i];
+    	child_ctx[7] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
-    	child_ctx[10] = list;
-    	child_ctx[11] = i;
+    	child_ctx[10] = list[i];
+    	child_ctx[11] = list;
+    	child_ctx[12] = i;
     	return child_ctx;
     }
 
@@ -644,15 +644,15 @@ var app = (function () {
     	let dispose;
 
     	function input_input_handler() {
-    		/*input_input_handler*/ ctx[2].call(input, /*each_value_1*/ ctx[10], /*i*/ ctx[11]);
+    		/*input_input_handler*/ ctx[2].call(input, /*each_value_1*/ ctx[11], /*i*/ ctx[12]);
     	}
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[3](/*todoListName*/ ctx[6], /*i*/ ctx[11], ...args);
+    		return /*click_handler*/ ctx[4](/*todoListName*/ ctx[7], /*i*/ ctx[12], ...args);
     	}
 
     	function click_handler_1(...args) {
-    		return /*click_handler_1*/ ctx[4](/*todo*/ ctx[9], /*each_value_1*/ ctx[10], /*i*/ ctx[11], ...args);
+    		return /*click_handler_1*/ ctx[5](/*todo*/ ctx[10], /*each_value_1*/ ctx[11], /*i*/ ctx[12], ...args);
     	}
 
     	const block = {
@@ -667,20 +667,20 @@ var app = (function () {
     			span1.textContent = "✓";
     			attr_dev(input, "type", "text");
     			attr_dev(input, "class", "svelte-140y7cm");
-    			toggle_class(input, "done", /*todo*/ ctx[9].completed);
+    			toggle_class(input, "done", /*todo*/ ctx[10].completed);
     			add_location(input, file$4, 15, 3, 383);
     			attr_dev(span0, "class", "svelte-140y7cm");
-    			add_location(span0, file$4, 16, 3, 458);
+    			add_location(span0, file$4, 16, 3, 506);
     			attr_dev(span1, "class", "check svelte-140y7cm");
-    			add_location(span1, file$4, 17, 3, 564);
+    			add_location(span1, file$4, 17, 3, 612);
     			attr_dev(li, "class", "svelte-140y7cm");
-    			toggle_class(li, "done", /*todo*/ ctx[9].completed);
+    			toggle_class(li, "done", /*todo*/ ctx[10].completed);
     			add_location(li, file$4, 14, 2, 346);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
     			append_dev(li, input);
-    			set_input_value(input, /*todo*/ ctx[9].text);
+    			set_input_value(input, /*todo*/ ctx[10].text);
     			append_dev(li, t0);
     			append_dev(li, span0);
     			append_dev(li, t2);
@@ -689,6 +689,7 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					listen_dev(input, "input", input_input_handler),
+    					listen_dev(input, "change", /*change_handler*/ ctx[3], false, false, false),
     					listen_dev(span0, "click", click_handler, false, false, false),
     					listen_dev(span1, "click", click_handler_1, false, false, false)
     				];
@@ -699,16 +700,16 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*todos, Object*/ 1 && input.value !== /*todo*/ ctx[9].text) {
-    				set_input_value(input, /*todo*/ ctx[9].text);
+    			if (dirty & /*todos, Object*/ 1 && input.value !== /*todo*/ ctx[10].text) {
+    				set_input_value(input, /*todo*/ ctx[10].text);
     			}
 
     			if (dirty & /*todos, Object*/ 1) {
-    				toggle_class(input, "done", /*todo*/ ctx[9].completed);
+    				toggle_class(input, "done", /*todo*/ ctx[10].completed);
     			}
 
     			if (dirty & /*todos, Object*/ 1) {
-    				toggle_class(li, "done", /*todo*/ ctx[9].completed);
+    				toggle_class(li, "done", /*todo*/ ctx[10].completed);
     			}
     		},
     		d: function destroy(detaching) {
@@ -732,7 +733,7 @@ var app = (function () {
     // (11:0) {#each Object.keys(todos) as todoListName}
     function create_each_block$2(ctx) {
     	let h3;
-    	let t0_value = /*todoListName*/ ctx[6] + "";
+    	let t0_value = /*todoListName*/ ctx[7] + "";
     	let t0;
     	let h3_id_value;
     	let t1;
@@ -744,7 +745,7 @@ var app = (function () {
     	let updating_list;
     	let t5;
     	let current;
-    	let each_value_1 = /*todos*/ ctx[0][/*todoListName*/ ctx[6]];
+    	let each_value_1 = /*todos*/ ctx[0][/*todoListName*/ ctx[7]];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -753,12 +754,12 @@ var app = (function () {
     	}
 
     	function adder_list_binding(value) {
-    		/*adder_list_binding*/ ctx[5](value);
+    		/*adder_list_binding*/ ctx[6](value);
     	}
 
     	let adder_props = {
     		storeList: /*storeList*/ ctx[1],
-    		currentList: /*todoListName*/ ctx[6]
+    		currentList: /*todoListName*/ ctx[7]
     	};
 
     	if (/*todos*/ ctx[0] !== void 0) {
@@ -785,10 +786,10 @@ var app = (function () {
     			t4 = space();
     			create_component(adder.$$.fragment);
     			t5 = space();
-    			attr_dev(h3, "id", h3_id_value = /*todoListName*/ ctx[6]);
+    			attr_dev(h3, "id", h3_id_value = /*todoListName*/ ctx[7]);
     			add_location(h3, file$4, 11, 1, 250);
     			attr_dev(span, "class", "svelte-140y7cm");
-    			add_location(span, file$4, 20, 2, 707);
+    			add_location(span, file$4, 20, 2, 755);
     			attr_dev(ul, "class", "svelte-140y7cm");
     			add_location(ul, file$4, 12, 1, 296);
     		},
@@ -810,14 +811,14 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*todos*/ 1) && t0_value !== (t0_value = /*todoListName*/ ctx[6] + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*todos*/ 1) && t0_value !== (t0_value = /*todoListName*/ ctx[7] + "")) set_data_dev(t0, t0_value);
 
-    			if (!current || dirty & /*todos*/ 1 && h3_id_value !== (h3_id_value = /*todoListName*/ ctx[6])) {
+    			if (!current || dirty & /*todos*/ 1 && h3_id_value !== (h3_id_value = /*todoListName*/ ctx[7])) {
     				attr_dev(h3, "id", h3_id_value);
     			}
 
     			if (dirty & /*todos, Object, storeList*/ 3) {
-    				each_value_1 = /*todos*/ ctx[0][/*todoListName*/ ctx[6]];
+    				each_value_1 = /*todos*/ ctx[0][/*todoListName*/ ctx[7]];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -842,7 +843,7 @@ var app = (function () {
 
     			const adder_changes = {};
     			if (dirty & /*storeList*/ 2) adder_changes.storeList = /*storeList*/ ctx[1];
-    			if (dirty & /*todos*/ 1) adder_changes.currentList = /*todoListName*/ ctx[6];
+    			if (dirty & /*todos*/ 1) adder_changes.currentList = /*todoListName*/ ctx[7];
 
     			if (!updating_list && dirty & /*todos*/ 1) {
     				updating_list = true;
@@ -995,6 +996,11 @@ var app = (function () {
     		$$invalidate(0, todos);
     	}
 
+    	const change_handler = () => {
+    		$$invalidate(0, todos);
+    		storeList();
+    	};
+
     	const click_handler = (todoListName, i, e) => {
     		todos[todoListName].splice(i, 1);
     		$$invalidate(0, todos);
@@ -1032,6 +1038,7 @@ var app = (function () {
     		todos,
     		storeList,
     		input_input_handler,
+    		change_handler,
     		click_handler,
     		click_handler_1,
     		adder_list_binding

@@ -13,7 +13,7 @@ import Adder from './Adder.svelte';
 	<ul>
 		{#each todos[todoListName] as todo, i}
 		<li class:done={todo.completed}>
-			<input class:done={todo.completed} type="text" bind:value={todo.text}>
+			<input class:done={todo.completed} type="text" bind:value={todo.text} on:change={() => {todos = todos; storeList();}}>
 			<span on:click={(e) => {todos[todoListName].splice(i, 1); todos = todos; storeList();}}>&times</span>
 			<span class="check" on:click={(e) => { todo.completed = !todo.completed; todos = todos; storeList(); }}>&#10003;</span>
 		</li>
