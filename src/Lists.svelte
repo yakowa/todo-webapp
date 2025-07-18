@@ -3,8 +3,6 @@
 	export let todos;
 	// Store in localstorage function
 	export let storeList;
-	// The current selected list
-	export let currentList;
 	// The toggle page function
 	export let togglePage;
 
@@ -41,12 +39,12 @@
 <ul>
 	{#each lists as list, i}
 		{#if i !== 0}
-			<li on:click={(e) => { currentList = lists[i]; togglePage(); }}>
+			<li on:click={(e) => { togglePage(); }}>
 				{lists[i]}
 				<span on:click={(e) => { delete todos[list]; todos = todos; lists = getList(todos); storeList();}}>&times</span>
 			</li>
 		{:else}
-		<li on:click={(e) => { currentList = lists[i]; togglePage(); }}>
+		<li on:click={(e) => { togglePage(); }}>
 			{lists[i]}
 		</li>
 		{/if}

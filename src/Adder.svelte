@@ -9,11 +9,12 @@
 	let newTodoItem = '';
 	
 	function updateList() {
+		console.warn("RAN" + newTodoItem)
 		if (!(newTodoItem == '')) {
 			if (list[currentList].length > 0) {
-				list[currentList] = [...list[currentList], newTodoItem]
+				list[currentList] = [...list[currentList], {text: newTodoItem, completed: false}]
 			}
-			else { list[currentList] = [newTodoItem] }
+			else { list[currentList] = [{text: newTodoItem, completed: false}] }
 			storeList();
 			newTodoItem = '';
 		}
@@ -24,8 +25,10 @@
 </script>
 
 <div>
-	<input type="text" bind:value={newTodoItem} placeholder="New item"/>
-	<button on:click={updateList}>Add</button>
+	<form on:submit|preventDefault={updateList}>
+		<input type="text" bind:value={newTodoItem} placeholder="New item"/>
+		<button type="submit">Add</button>
+	</form>
 </div>
 
 
@@ -41,5 +44,13 @@
 	}
 	button {
 		width: 20%;
+	}
+
+	form {
+		display: flex;
+		gap: 1rem;
+		width: 100%;
+		justify-content: space-between;
+		flex-direction: row;
 	}
 </style>
